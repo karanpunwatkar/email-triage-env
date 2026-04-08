@@ -1,0 +1,45 @@
+name: email_triage_env
+description: |
+  An OpenEnv environment for email triage simulation. 
+  It includes tasks: easy, medium, hard.
+  Uses Qwen 2.5B Instruct model as the agent backend.
+
+# Python version
+python_version: "3.13"
+
+# Entry point for the environment
+entry_point: inference.py
+
+# Tasks supported
+tasks:
+  - easy
+  - medium
+  - hard
+
+# Observation schema
+observation:
+  sender: string
+  subject: string
+  body: string
+  last_action_result: string
+
+# Action schema
+action:
+  type:
+    action_type: ["acknowledge", "reply", "escalate"]
+    priority: ["low", "medium", "high"]
+    content: string
+
+# Reward settings
+reward_range: [0.0, 1.0]
+max_steps: 3
+
+# Environment variables
+env_vars:
+  HF_TOKEN: "your_huggingface_token"
+  MODEL_NAME: "Qwen/Qwen2.5-72B-Instruct"
+  API_BASE_URL: "https://api.openai.com/v1"
+
+# Dependencies
+dependencies:
+  python: ["pydantic", "openai", "asyncio"]
