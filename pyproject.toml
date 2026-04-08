@@ -3,15 +3,15 @@ name = "email-triage-env"
 version = "0.1.0"
 description = "OpenEnv Email Triage Environment"
 authors = [{ name="Karan Punwatkar" }]
-readme = "README.md"
 requires-python = ">=3.9"
 
 dependencies = [
     "fastapi",
     "uvicorn",
     "pydantic",
-    "openai"
+    "openai",
+    "openenv-core>=0.2.0"
 ]
 
-[tool.setuptools]
-packages = ["my_env"]
+[project.scripts]
+server = "server.app:app"

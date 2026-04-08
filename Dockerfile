@@ -20,4 +20,4 @@ ENV MODEL_NAME="Qwen/Qwen2.5-72B-Instruct"
 ENV API_BASE_URL="https://api.openai.com/v1"
 
 # Run the app. app.py is in my_env dir, so we use my_env.app:app
-CMD ["uvicorn", "my_env.app:app", "--host", "0.0.0.0", "--port", "7860"]
+CMD ["uvicorn", "server.app:app", "--host", "0.0.0.0", "--port", "7860"]
