@@ -7,7 +7,7 @@ app = FastAPI()
 
 env = EmailEnv(task_name="easy")
 
-@app.post("/reset")
+@app.api_route("/reset", methods=["GET", "POST"])
 async def reset():
     result = await env.reset()
     return {
