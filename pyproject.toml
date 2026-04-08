@@ -3,7 +3,7 @@ name = "email-triage-env"
 version = "0.1.0"
 description = "OpenEnv Email Triage Environment"
 authors = [{ name="Karan Punwatkar" }]
-requires-python = ">=3.9"
+requires-python = ">=3.10"
 
 dependencies = [
     "fastapi",
