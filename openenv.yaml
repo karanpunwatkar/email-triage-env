@@ -42,4 +42,4 @@ env_vars:
 
 # Dependencies
 dependencies:
-  python: ["pydantic", "openai", "asyncio"]
+  python: ["pydantic", "openai", "asyncio", "fastapi", "uvicorn"]
